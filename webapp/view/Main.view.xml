@@ -1,0 +1,29 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="CRUDJSON.controller.Main" displayBlock="true">
+	<App>
+		<pages><Page title="{i18n>title}">
+				<content>
+					<VBox width="80%" direction="Column" id="vbox1" alignContent="Center" justifyContent="Center">
+						<List id="List" items="{/Employees}" width="60%" includeItemInSelection="true">
+							<items>
+								<ObjectListItem type="Active" title="{FirstName} {LastName}" number="{ path: 'ID' }" id="EmployeeRow" press="OnItemPress"/>
+							</items>
+							<headerToolbar>
+							    <OverflowToolbar width="100%" id="__toolbar3">
+							        <content>
+							            <Button width="35px" id="CreateBtn" icon="sap-icon://add" press="AddEmployee"/>
+							            <Button width="35px" id="ChangeBtn" icon="sap-icon://edit" press="EditEmployee"/>
+							            <Button type="Transparent" width="35px" id="DeleteBtn" icon="sap-icon://delete" press="DeleteEmployee"/>
+							            <Button width="35px" id="RefreshBtn" icon="sap-icon://refresh" press="RefreshEmployees"/>
+							        </content>
+							    </OverflowToolbar>
+							</headerToolbar>
+							</List>
+						<items>
+						</items>
+						</VBox>
+					</content>
+					<headerContent/>
+				</Page>
+			</pages>
+		</App>
+	</mvc:View>
